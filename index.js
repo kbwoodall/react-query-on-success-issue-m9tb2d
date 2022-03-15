@@ -17,11 +17,9 @@ const App = () => {
     },
   });
 
-  // const { data, error, status } = useQuery("users", fetchAllUsers);
-
   return (
     <div>
-      <Hello name={'my phone list'} />
+      <Hello name={'phone list'} />
       <p>Phone List</p>
 
       {data.map(({ name, phone }, index) => (
