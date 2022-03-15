@@ -9,7 +9,7 @@ import './style.css';
 //fetch("https://jsonplaceholder.typicode.com/posts?_limit=2")
 
 const App = () => {
-  const { data = [], status } = useQuery({
+  const { data=[], status } = useQuery({
     queryKey: 'id',
     queryFn: () =>
       fetch('https://kwoodallsapp.herokuapp.com/getitems').then((res) =>
@@ -26,7 +26,7 @@ const App = () => {
     <div>
       <Hello name={'world'} />
       <p>Start editing again to see some magic happen :)</p>
-      <p>{data}</p>
+      <p>testing</p>
       {data.map(({ name, phone }, index) => (
         <div key={index}>
           <h3>{phone}</h3>
