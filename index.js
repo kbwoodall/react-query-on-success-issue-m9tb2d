@@ -23,7 +23,7 @@ const App = () => {
   return (
     <div>
       <Hello name={'world'} />
-      <p>Start editing now to see some magic happen :)</p>
+      <p>Start editing again to see some magic happen :)</p>
       {data.map(({ name, phone }, index) => (
         <div key={index}>
           <h3>{phone}</h3>
