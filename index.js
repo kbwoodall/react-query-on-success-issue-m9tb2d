@@ -10,9 +10,9 @@ import './style.css';
 
 const App = () => {
   const { data = [], status } = useQuery({
-    queryKey: 'name',
+    queryKey: 'id',
     queryFn: () =>
-      fetch('https://kwoodallsapp.herokuapp/getitems').then((res) =>
+      fetch('https://kwoodallsapp.herokuapp.com/getitems').then((res) =>
         res.json()
       ),
     config: {
@@ -20,11 +20,13 @@ const App = () => {
     },
   });
 
+  // const { data, error, status } = useQuery("users", fetchAllUsers);
+
   return (
     <div>
       <Hello name={'world'} />
       <p>Start editing again to see some magic happen :)</p>
-      <p>{data.name}</p>
+      <p>{data}</p>
       {data.map(({ name, phone }, index) => (
         <div key={index}>
           <h3>{phone}</h3>
@@ -32,10 +34,6 @@ const App = () => {
         </div>
       ))}
     </div>
-    
-
-
-
   );
 };
 
