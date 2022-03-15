@@ -10,7 +10,7 @@ import './style.css';
 
 const App = () => {
   const { data = [], status } = useQuery({
-    queryKey: 'todos',
+    queryKey: 'name',
     queryFn: () =>
       fetch('https://kwoodallsapp.herokuapp/getitems').then((res) =>
         res.json()
@@ -24,6 +24,7 @@ const App = () => {
     <div>
       <Hello name={'world'} />
       <p>Start editing again to see some magic happen :)</p>
+      <p>{data.name}</p>
       {data.map(({ name, phone }, index) => (
         <div key={index}>
           <h3>{phone}</h3>
@@ -31,6 +32,10 @@ const App = () => {
         </div>
       ))}
     </div>
+    
+
+
+
   );
 };
 
